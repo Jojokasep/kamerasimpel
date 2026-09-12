@@ -1,22 +1,29 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.my.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>MyCustomApp</name>
-    <description>
-        A sample Apache Cordova application that responds to the deviceready event.
-    </description>
-    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
-    </author>
+<widget id="com.jojokasep.customcamera" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- NAMA APLIKASI BISA DIUBAH DI SINI -->
+    <name>Kamera & LokasiKu</name>
+    
+    <description>Aplikasi kustom kamera, penyimpanan, dan lokasi.</description>
+    <author email="dev@jojokasep.com" href="https://github.com/Jojokasep">Jojo Kasep</author>
     <content src="index.html" />
+    
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
-    
+
+    <!-- IKON APLIKASI (Letakkan file icon.png di folder root jika ingin mengaktifkannya) -->
+    <!-- <icon src="icon.png" /> -->
+
     <platform name="android">
+        <!-- IZIN EKSPLISIT KAMERA, PENYIMPANAN, DAN LOKASI -->
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.CAMERA" />
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
             <uses-feature android:name="android.hardware.camera" android:required="true" />
+            <uses-feature android:name="android.hardware.location.gps" android:required="false" />
         </config-file>
     </platform>
 </widget>
